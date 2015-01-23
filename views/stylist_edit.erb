@@ -1,0 +1,19 @@
+<h1>Diva's Hair Salon</h1>
+<h3>Update the stylist <%=@stylist.name() %> </h3>
+
+<form action="/stylists/<%= @stylist.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+
+  <label for="name">Rename your stylist:</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit">Update</button>
+</form>
+<br />
+<br />
+
+<form action="/stylists/<%= @stylist.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit">Delete stylist</button>
+</form>

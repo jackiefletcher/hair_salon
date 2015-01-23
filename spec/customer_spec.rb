@@ -47,4 +47,24 @@ describe(Customer) do
       expect(Customer.find(customer2.id())).to(eq(customer2))
     end
   end
+
+  describe("#update") do
+    it("lets you update customers in the database") do
+      customer1 = Customer.new({:name => "Sam Sparks", :phone => "555-55-5555", :stylist_id => 1, :id => nil})
+      customer1.save()
+      customer1.update({:name => "Tina"})
+      expect(customer1.name()).to(eq("Tina"))
+    end
+  end
+
+  describe("#delete") do
+    it("lets you delete a customer from the database") do
+      customer1 = Customer.new({:name => "Sam Sparks", :phone => "555-55-5555", :stylist_id => 1, :id => nil})
+      customer1.save()
+      customer2 = Customer.new({:name => "Heather Hill", :phone => "555-55-6666", :stylist_id => 1, :id => nil})
+      customer2.save()
+      customer1.delete()
+      expect(Customer.all()).to(eq([customer2]))
+    end
+  end
 end

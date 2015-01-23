@@ -1,6 +1,7 @@
 <h1>Diva's Hair Salon</h1>
 <h3>Stylist <%= @stylist.name() %></h3>
 <br />
+<br />
 <form action="/customers" method="post">
 
   <input id="stylist_id" name="stylist_id" type="hidden" value="<%= @stylist.id() %>">
@@ -29,4 +30,5 @@
 <p>There are no customers yet!</p>
 <% end %>
 <br />
-<a href="/">Return to Main Page</a>
+<p><a href="/stylists/<%= @stylist.id() %>/edit"><b>EDIT</b> <%= @stylist.name() %> stylist</a></p>
+<p><a href="/">Return to Main Page</a></p>
