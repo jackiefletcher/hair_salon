@@ -17,7 +17,7 @@ The tables in each database are titled "stylists" and "customers"
 
 The stylists table includes the following columns: name varchar, id serial PRIMARY KEY
 
-The customers table includes the following columns: name varchar, stylist_id int, id serial PRIMARY KEY
+The customers table includes the following columns: name varchar, phone varchar, stylist_id int, id serial PRIMARY KEY
 
 Go to http://localhost:4567 in your browser
 
