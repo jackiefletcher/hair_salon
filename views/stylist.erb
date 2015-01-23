@@ -1,0 +1,33 @@
+<h1>Diva's Hair Salon</h1>
+<h3>Stylist <%= @stylist.name() %></h3>
+<br />
+<form action="/customers" method="post">
+
+  <input id="stylist_id" name="stylist_id" type="hidden" value="<%= @stylist.id() %>">
+  <div class="form-group">
+    <label for="customer">Customer Name:</label>
+    <input id="customer" name="customer" type="text">
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Customer Phone:</label>
+    <input id="phone" name="phone" type="text">
+  </div>
+
+  <button type="submit" class="primary">Add customer</button>
+</form>
+<br />
+<% if @stylist.customers().any?() %>
+<h3><%= @stylist.name() %>'s current clients:</h3>
+
+<ul>
+  <% @stylist.customers().each() do |customer| %>
+  <li><%= customer.name() %>, <%= customer.phone() %></li>
+  </ul>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no customers yet!</p>
+<% end %>
+<br />
+<a href="/">Return to Main Page</a>

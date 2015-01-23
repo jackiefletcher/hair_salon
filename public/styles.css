@@ -1,0 +1,33 @@
+body {
+  font-family: 'Abel', sans-serif;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+  font-size: 3.5em;
+  color: #B47977;
+  text-align: center;
+}
+
+button {
+  border-radius: 10px;
+  border-padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  border-radius: 30px;
+}
+
+.container {
+  width: 80%;
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 35px;
+  background-color: #7CFFA6;
+  border-radius: 10px;
+}
