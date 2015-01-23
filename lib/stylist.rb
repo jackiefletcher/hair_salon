@@ -36,5 +36,18 @@ attr_reader(:name, :id)
     found_stylist
   end
 
+  define_method(:customers) do
+    stylist_customers = []
+    customers = DB.exec("SELECT * FROM customers WHERE stylist_id = #{self.id()} ORDER BY name;")
+    customers.each() do |customer|
+      name = customer.fetch("name")
+      phone = customer.fetch("phone")
+      stylist_id = customer.fetch("stylist_id")
+      id = customer.fetch("id").to_i()
+      stylist_customers.push(Customer.new({:name => name, :phone => phone, :stylist_id => stylist_id, :id => id}))
+    end
+    stylist_customers
+  end
+
 
 end
